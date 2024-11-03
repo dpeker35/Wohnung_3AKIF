@@ -116,9 +116,16 @@ public class Wohnung
 
     public void setAnzZimmer(int anzZimmer)
     {
+        if((anzZimmer >=1) && (anzZimmer <= 7))
+        {
         this.anzZimmer = anzZimmer;
+        }
+        else
+         {
+            System.out.println("Error: Der Wert muss zwischen 1 und 7 liegen");
+            this.anzZimmer = 4;
+        }
     }
-
    
     public String getOrt()
     {
