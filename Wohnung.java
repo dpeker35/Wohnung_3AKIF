@@ -153,11 +153,16 @@ public class Wohnung
     
     public String getHausnummer()
     {
-        int pos;
+        int pos1;
+        int pos2;
         String hausnummer;
         
-        pos = strasse.indexOf("1");
-        hausnummer = strasse.substring(pos,15);
+        pos1 = strasse.indexOf(" ")+1;
+        pos2 = strasse.indexOf("/", pos1);
+        hausnummer = strasse.substring(pos1,pos2);
+        
+        
+        
         
         return hausnummer;
         
@@ -168,11 +173,13 @@ public class Wohnung
     public String getStockWohnung()
     {
         
-        int pos2;
+        int pos3;
+        int pos4;
         String stockWohnung;
         
-        pos2 = strasse.indexOf("/")+1;
-        stockWohnung = strasse.substring(pos2,17);
+        pos3 = strasse.indexOf("/")+1;
+        pos4 = strasse.indexOf("/",pos3);
+        stockWohnung = strasse.substring(pos3,pos4);
         
         return stockWohnung;
     }
